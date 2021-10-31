@@ -4,18 +4,21 @@ To generate the map, we recommend using [LeafletJS](https://leafletjs.com/).*/
 //88.121.111.97
 const headerInformation = document.querySelector(".header-information");
 
-btnSearch.addEventListener("click", () => {
-  userDisplay();
-  fetchLocation();
+btnSearch.addEventListener("click", async () => {
+  await fetchLocation();
+  await userDisplay();
+  await myMap();
   headerInformation.style.display = "flex";
+  findIp.value = "";
 });
 
-findIp = findIp.value;
 let userData = [];
-let latitude = 51.505;
-let longitude = -0.09;
+let latitude = "";
+let longitude = "";
 
 const fetchUser = async () => {
+  const findIp = document.getElementById("findIp").value;
+
   await fetch(
     `https://geo.ipify.org/api/v2/country?apiKey=at_BfX6cUPn4TyiLYDXhWFYiF1xmLeg2&ipAddress=${findIp}`
   )
@@ -26,6 +29,8 @@ const fetchUser = async () => {
 };
 
 const fetchLocation = async () => {
+  const findIp = document.getElementById("findIp").value;
+
   await fetch(`http://ip-api.com/json/${findIp}`)
     .then((res) => res.json())
     .then((data) => {
@@ -62,7 +67,7 @@ const userDisplay = async () => {
 const myMap = async () => {
   await fetchLocation();
   var mymap = L.map("map").setView([latitude, longitude], 10);
-
+  console.log(latitude, longitude);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -77,5 +82,3 @@ const myMap = async () => {
     }
   ).addTo(mymap);
 };
-
-myMap();
