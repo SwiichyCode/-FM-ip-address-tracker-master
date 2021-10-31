@@ -123,7 +123,7 @@ input {
   position: absolute;
   top: 200px;
   display: none;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-width: 1110px;
   width: 100%;
@@ -134,11 +134,17 @@ input {
   padding: 0 32px;
   z-index: 15;
 }
-.header-information__content {
+.header-information-content {
   display: flex;
   flex-direction: column;
-  max-width: 213px;
-  width: 100%;
+  width: 213px;
+}
+.header-information__line {
+  width: 1px;
+  height: 75px;
+  background: var(--color-Black);
+  mix-blend-mode: normal;
+  opacity: 0.15;
 }
 .header-information h3 {
   font-weight: bold;

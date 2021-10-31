@@ -65,7 +65,7 @@
     position: absolute;
     top: 200px;
     display: none;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     max-width: 1110px;
     width: 100%;
@@ -76,11 +76,18 @@
     padding: 0 32px;
     z-index: 15;
 
-    &__content {
+    &-content {
       display: flex;
       flex-direction: column;
-      max-width: 213px;
-      width: 100%;
+      width: 213px;
+    }
+
+    &__line {
+      width: 1px;
+      height: 75px;
+      background: var(--color-Black);
+      mix-blend-mode: normal;
+      opacity: .15;
     }
 
     h3 {

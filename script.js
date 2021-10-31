@@ -48,14 +48,17 @@ const userDisplay = async () => {
         <h3>ip address</h3>
         <span>${userData.ip}</span>
     </div>
+    <div class="header-information__line"></div>
     <div class="header-information__location header-information-content">
         <h3>location</h3>
         <span>${userData.location.region}</span>
     </div>
+    <div class="header-information__line"></div>
     <div class="header-information__timezone header-information-content">
         <h3>timezone</h3>
         <span>${userData.location.timezone}</span>
     </div>
+    <div class="header-information__line"></div>
     <div class="header-information__isp header-information-content">
         <h3>isp</h3>
         <span>${userData.isp}</span>
