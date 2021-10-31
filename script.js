@@ -18,7 +18,6 @@ let longitude = "";
 
 const fetchUser = async () => {
   const findIp = document.getElementById("findIp").value;
-
   await fetch(
     `https://geo.ipify.org/api/v2/country?apiKey=at_BfX6cUPn4TyiLYDXhWFYiF1xmLeg2&ipAddress=${findIp}`
   )
@@ -81,4 +80,6 @@ const myMap = async () => {
         "pk.eyJ1Ijoic3dpaWNoeWNvZGUiLCJhIjoiY2t2ZTQxMng2MTFvdjJxbzhzZnF1YnNpYSJ9.bFXSWqTiyB8I0TkrQFNL0w ",
     }
   ).addTo(mymap);
+
+  var marker = L.marker([latitude, longitude]).addTo(mymap);
 };
