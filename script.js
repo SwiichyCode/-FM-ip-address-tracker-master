@@ -85,4 +85,8 @@ const myMap = async () => {
   ).addTo(mymap);
 
   var marker = L.marker([latitude, longitude]).addTo(mymap);
+
+  if (L.DomUtil.get("map") !== undefined) {
+    L.DomUtil.get("map")._leaflet_id = null;
+  }
 };
