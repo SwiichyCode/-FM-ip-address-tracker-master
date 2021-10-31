@@ -10,14 +10,46 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-	<link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
   <body>
-    IP Address Tracker Search for any IP address or domain IP Address Location
-    Timezone UTC
-    <!-- add offset value dynamically using the API -->
-    ISP
-	<script src="script.js"></script>
+    <div class="container">
+      <div class="header">
+        <div class="header-title">
+          <h1><span>ip</span> address tracker</h1>
+        </div>
+        <div class="header-input">
+          <input
+            type="text"
+            name=""
+            id="findIp"
+            placeholder="Search for any IP address or domain"
+          />
+          <button type="submit" id="btnSearch">
+            <img src="/images/icon-arrow.svg" />
+          </button>
+        </div>
+        <div class="header-information">
+          <!--UserDisplay-->
+        </div>
+      </div>
+      <div class="main">
+        <div id="map"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
